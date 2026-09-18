@@ -343,4 +343,18 @@ NOTES
 END OF CHANGELOG
 Steps listed in the order they were completed.
 =====================================================
+
+### reference list
+
+Anglia Ruskin University (2024) Cite Them Right: Harvard referencing guide. Available at: https://anglia.libguides.com/theology/ctr (Accessed: 18 September 2026).
+
+Internet Assigned Numbers Authority (2025) Hypertext Transfer Protocol (HTTP) Status Code Registry. Available at: https://www.iana.org/assignments/http-status-codes (Accessed: 18 September 2026).
+
+Mozilla Developer Network (2024) Mobile accessibility checklist. Available at: https://developer.mozilla.org/en-US/docs/Web/Accessibility/Mobile_accessibility_checklist (Accessed: 18 September 2026).
+
+Pluralsight (2026) Guided: Responsive Design with Media Queries. Available at: https://www.pluralsight.com/labs/codeLabs/guided-responsive-design-with-media-queries (Accessed: 18 September 2026).
+
+Platzi (2025) Cómo implementar un diseño responsivo en una página web. Available at: https://platzi.com/blog/como-implementar-un-diseno-responsivo-4/ (Accessed: 18 September 2026).
+
+W3C (2025) How to Meet WCAG (Quick Reference). Available at: https://www.w3.org/WAI/WCAG22/quickref/ (Accessed: 18 September 2026).
 ```
