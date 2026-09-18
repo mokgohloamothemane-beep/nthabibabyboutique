@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot | Nthabi Baby Boutique</title>
+    <link rel="stylesheet" href="css_assets/myfirstcss/style.css">
+</head>
+<body>
+
+<header>
+    <h1>Nthabi Baby Boutique</h1>
+    <p>Comfort • Style • Love for Every Little One</p>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="product_categories.html">Products</a>
+        <a href="shopping_cart.html">Shopping Cart</a>
+        <a href="contact.html">Contact</a>
+        <a href="chatbot.html">Chatbot</a>
+    </nav>
+</header>
+
+<main>
+    <h2>Baby Boutique Chatbot</h2>
+    <p>Ask a question below.</p>
+
+    <div id="chatBox" style="border:1px solid #ccc; width:400px; height:250px; overflow:auto; padding:10px; background:#f9f9f9; margin:0 auto;">
+        <p><strong>Bot:</strong> Hello! Welcome to Nthabi Baby Boutique. How can I help you today?</p>
+    </div>
+
+    <br>
+
+    <input type="text" id="userInput" placeholder="Type your question here..." size="45">
+    <button onclick="reply()">Send</button>
+</main>
+  <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="product_categories.html">Products</a>
+        <a href="shopping_cart.html">Shopping Cart</a>
+        <a href="contact.html">Contact</a>
+        <a href="chatbot.html">Chatbot</a>
+
+<footer>
+    <p>&copy; 2026 Nthabi Baby Boutique. All Rights Reserved.</p>
+</footer>
+
+<script>
+function reply() {
+    var input = document.getElementById("userInput").value.toLowerCase().trim();
+    var response = "";
+
+    if (input === "") {
+        return;
+    }
+
+    if (input.includes("hello") || input.includes("hi")) {
+        response = "Hello! Welcome to Nthabi Baby Boutique.";
+    } else if (input.includes("hours") || input.includes("open")) {
+        response = "We are open Monday to Friday from 08:00 to 17:00 and Saturday from 09:00 to 15:00.";
+    } else if (input.includes("location") || input.includes("address")) {
+        response = "We are located at 123 Market Street, Polokwane, Limpopo.";
+    } else if (input.includes("products") || input.includes("clothes")) {
+        response = "We sell baby clothes, shoes, blankets, gift sets, hats, socks and accessories.";
+    } else if (input.includes("delivery")) {
+        response = "Yes, we offer delivery throughout South Africa.";
+    } else if (input.includes("contact")) {
+        response = "You can contact us on +27 15 123 4567 or email info@nthabibabyboutique.co.za.";
+    } else {
+        response = "Sorry, I don't understand that question. Please ask about our products, delivery, location or business hours.";
+    }
+
+    var chat = document.getElementById("chatBox");
+    chat.innerHTML += "<p><strong>You:</strong> " + input + "</p>";
+    chat.innerHTML += "<p><strong>Bot:</strong> " + response + "</p>";
+    document.getElementById("userInput").value = "";
+    chat.scrollTop = chat.scrollHeight;
+}
+
+// Allow Enter key to send
+document.getElementById("userInput").addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        reply();
+    }
+});
+</script>
+
+</body>
+</html>
