@@ -259,6 +259,8 @@ CHANGED:
 - Main padding reduced on smaller screens
 - Nav links wrap and stack cleanly on tablets/phones
 
+## changelog
+
 
 -----------------------------------------------------
 STEP 3 — CREATED SITE SITEMAP (FIRST DRAFT)
