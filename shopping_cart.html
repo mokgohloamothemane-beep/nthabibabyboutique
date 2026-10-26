@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart | Nthabi Baby Boutique</title>
+    <meta name="description" content="Review your selected baby clothes and proceed to secure checkout at Nthabi Baby Boutique.">
+    <link rel="stylesheet" href="css_assets/myfirstcss/style.css">
+</head>
+<body>
+
+<header>
+    <h1>Nthabi Baby Boutique</h1>
+    <p>Comfort • Style • Love for Every Little One</p>
+    <hr>
+    <nav>
+          <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="product_categories.html">Products</a>
+        <a href="shopping_cart.html">Shopping Cart</a>
+        <a href="contact.html">Contact</a>
+        <a href="enquiry.html">Enquiry</a>
+        <a href="chatbot.html">Chatbot</a>
+    </nav>
+    <hr>
+</header>
+
+<main>
+    <h2>🛒 Your Shopping Cart</h2>
+    <p>
+        Thank you for shopping with <strong>Nthabi Baby Boutique.</strong><br>
+        Review your selected items before proceeding to checkout.
+    </p>
+
+    <!-- CART ITEMS WILL APPEAR HERE -->
+    <div id="cart-items" style="margin: 20px auto; max-width: 600px; text-align: left;"></div>
+
+    <div style="text-align:center; margin-top:20px;">
+        <h3>Items in Cart: <span id="cart-count">0</span></h3>
+        <h3>Total: R<span id="cart-total">0.00</span></h3>
+        <!-- CLEAR CART BUTTON -->
+        <button onclick="clearCart()" style="background-color: #D98A92; margin-top: 10px;">Clear Cart</button>
+    </div>
+
+    <br>
+
+    <h2>Customer Information</h2>
+    <form onsubmit="event.preventDefault(); alert('Order placed successfully!');">
+        <label><strong>Full Name</strong></label><br>
+        <input type="text" size="50" required><br><br>
+
+        <label><strong>Email Address</strong></label><br>
+        <input type="email" size="50" required><br><br>
+
+        <label><strong>Phone Number</strong></label><br>
+        <input type="tel" size="50" required><br><br>
+
+        <label><strong>Delivery Address</strong></label><br>
+        <textarea rows="5" cols="55" required></textarea><br><br>
+
+        <label><strong>Select Payment Method</strong></label><br>
+        <input type="radio" name="payment" id="debit" required> <label for="debit">Debit Card</label><br>
+        <input type="radio" name="payment" id="credit"> <label for="credit">Credit Card</label><br>
+        <input type="radio" name="payment" id="eft"> <label for="eft">EFT</label><br>
+        <input type="radio" name="payment" id="cash"> <label for="cash">Cash on Collection</label><br><br>
+
+        <input type="submit" value="Proceed to Checkout">
+        <input type="reset" value="Clear Form">
+    </form>
+
+    <hr>
+
+    <h2>Why Shop With Us?</h2>
+    <ul style="list-style-position: inside; text-align: left; display: inline-block;">
+        <li>✔ Premium quality baby clothing.</li>
+        <li>✔ Affordable prices.</li>
+        <li>✔ Secure shopping experience.</li>
+        <li>✔ Fast nationwide delivery.</li>
+        <li>✔ Friendly customer support.</li>
+        <li>✔ Easy returns and exchanges.</li>
+    </ul>
+</main>
+
+<hr>
+
+<footer>
+    <h3>Nthabi Baby Boutique</h3>
+    <p>123 Market Street<br>Polokwane, Limpopo<br>South Africa</p>
+    <p>Phone: +27 15 123 4567</p>
+    <p>Email: info@nthabibabyboutique.co.za</p>
+    <p>&copy; 2026 Nthabi Baby Boutique. All Rights Reserved.</p>
+</footer>
+
+<!-- ALL JAVASCRIPT IS NOW HARDCODED HERE -->
+<script>
+function renderCart() {
+    const cartContainer = document.getElementById('cart-items');
+    const cartCount = document.getElementById('cart-count');
+    const cartTotal = document.getElementById('cart-total');
+
+    if (!cartContainer) return; 
+
+    // Get items saved from the product page
+    let cart = JSON.parse(localStorage.getItem('nthabiCart')) || [];
+    
+    cartContainer.innerHTML = "";
+    let total = 0;
+    let count = 0;
+
+    if (cart.length === 0) {
+        cartContainer.innerHTML = "<p style='text-align:center;'>Your cart is currently empty.</p>";
+    } else {
+        cart.forEach(item => {
+            total += item.price * item.quantity;
+            count += item.quantity;
+            
+            cartContainer.innerHTML += `
+                <div style="display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid #ccc; padding:10px; background: white; border-radius: 10px; margin-bottom: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                    <img src="${item.image}" alt="${item.name}" style="width:60px; height:60px; object-fit:cover; border-radius:5px;">
+                    <div style="flex-grow:1; padding-left:15px;">
+                        <strong>${item.name}</strong><br>
+                        R${item.price.toFixed(2)} x ${item.quantity}
+                    </div>
+                    <div>
+                        <button onclick="updateQuantity(${item.id}, -1)" style="padding: 5px 10px; margin:0; background-color: #7B9EA8;">-</button>
+                        <button onclick="updateQuantity(${item.id}, 1)" style="padding: 5px 10px; margin:0; background-color: #7B9EA8;">+</button>
+                    </div>
+                </div>
+            `;
+        });
+    }
+
+    if(cartCount) cartCount.innerText = count;
+    if(cartTotal) cartTotal.innerText = total.toFixed(2);
+}
+
+function updateQuantity(id, change) {
+    let cart = JSON.parse(localStorage.getItem('nthabiCart')) || [];
+    const item = cart.find(item => item.id === id);
+    if (item) {
+        item.quantity += change;
+        if (item.quantity <= 0) {
+            cart = cart.filter(i => i.id !== id); 
+        }
+        localStorage.setItem('nthabiCart', JSON.stringify(cart));
+        renderCart(); 
+    }
+}
+
+function clearCart() {
+    if(confirm("Are you sure you want to clear your cart?")) {
+        localStorage.removeItem('nthabiCart');
+        renderCart();
+    }
+}
+
+// Run the cart rendering when the page loads
+document.addEventListener("DOMContentLoaded", renderCart);
+</script>
+
+</body>
+</html>

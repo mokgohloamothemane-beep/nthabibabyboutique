@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baby Chatbot Assistant | Nthabi Baby Boutique</title>
+    <meta name="description" content="Have a question about our baby clothes, delivery, or pricing? Ask our smart virtual assistant chatbot!">
+    <link rel="stylesheet" href="css_assets/myfirstcss/style.css">
+</head>
+   
+<body>
+
+<header>
+    <h1>Nthabi Baby Boutique</h1>
+    <p>Comfort • Style • Love for Every Little One</p>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="product_categories.html">Products</a>
+        <a href="shopping_cart.html">Shopping Cart</a>
+        <a href="contact.html">Contact</a>
+        <a href="enquiry.html">Enquiry</a>
+        <a href="chatbot.html">Chatbot</a>
+    </nav>
+</header>
+
+<main>
+    <h2>Baby Boutique Chatbot</h2>
+    <p>Ask a question below. I know about our products, prices, location, and delivery!</p>
+
+    <div id="chatBox" style="border:1px solid #ccc; width:400px; height:250px; overflow:auto; padding:10px; background:#f9f9f9; margin:0 auto; text-align: left;">
+        <p><strong>Bot:</strong> Hello! Welcome to Nthabi Baby Boutique. How can I help you today?</p>
+    </div>
+
+    <br>
+
+    <input type="text" id="userInput" placeholder="Type your question here..." size="45">
+    <button onclick="reply()">Send</button>
+</main>
+
+<footer>
+    <p>&copy; 2026 Nthabi Baby Boutique. All Rights Reserved.</p>
+</footer>
+
+<script>
+function reply() {
+    var input = document.getElementById("userInput").value.toLowerCase().trim();
+    var response = "";
+
+    if (input === "") {
+        return;
+    }
+
+    // Smart Keyword Matching System
+    if (input.match(/hello|hi|hey|greet/)) {
+        response = "Hello! Welcome to Nthabi Baby Boutique. How can I help you today?";
+    } 
+    else if (input.match(/hours|open|time|close|when/)) {
+        response = "We are open Monday to Friday from 08:00 to 17:00 and Saturday from 09:00 to 15:00. We are closed on Sundays.";
+    } 
+    else if (input.match(/location|address|where|find|store|shop/)) {
+        response = "We are located at 123 Market Street, Polokwane, Limpopo.";
+    } 
+    else if (input.match(/product|clothes|cloth|sell|item|stock|what do you have/)) {
+        response = "We sell baby clothes, shoes, blankets, gift sets, hats, socks and accessories. Check out our Products page!";
+    } 
+    else if (input.match(/delivery|ship|post|courier|send/)) {
+        response = "Yes, we offer delivery throughout South Africa.";
+    } 
+    else if (input.match(/contact|phone|call|email|reach|whatsapp/)) {
+        response = "You can contact us on +27 15 123 4567, WhatsApp us on +27 82 456 7890, or email info@nthabibabyboutique.co.za.";
+    } 
+    else if (input.match(/price|cost|how much|expensive|cheap|afford/)) {
+        response = "Our prices range from R80 for socks to R350 for a gift set. You can see all prices on our Products page!";
+    }
+    else if (input.match(/return|refund|exchange|money back/)) {
+        response = "We offer easy returns and exchanges. Please contact us within 30 days of purchase to arrange a return.";
+    }
+    else if (input.match(/size|fit|age|month|year/)) {
+        response = "We stock clothing for newborns, infants, and toddlers up to 3 years old. Please check the size chart on our product pages.";
+    }
+    else if (input.match(/fabric|material|cotton|soft|safe|wash/)) {
+        response = "Our clothing is made from soft, baby-friendly fabrics like 100% organic cotton. They are safe for sensitive skin and machine washable.";
+    }
+    else if (input.match(/pay|payment|card|eft|cash/)) {
+        response = "We accept Debit Card, Credit Card, EFT, and Cash on Collection.";
+    }
+    else if (input.match(/thank|thanks|great|cool/)) {
+        response = "You're very welcome! Is there anything else I can help you with?";
+    }
+    else {
+        // Fallback for questions it doesn't know
+        response = "That is a great question! I am still learning, so I don't have the exact answer right now. Please ask me about our products, prices, delivery, returns, or store location.";
+    }
+
+    var chat = document.getElementById("chatBox");
+    // Add user message
+    chat.innerHTML += "<p><strong>You:</strong> " + input + "</p>";
+    // Add bot response
+    chat.innerHTML += "<p><strong>Bot:</strong> " + response + "</p>";
+    
+    document.getElementById("userInput").value = "";
+    chat.scrollTop = chat.scrollHeight;
+}
+
+// Allow Enter key to send
+document.getElementById("userInput").addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        reply();
+    }
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,463 @@
+/* General page styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #FFF9F5; /* Soft baby cream fallback */
+    background-image: url('../images/your_image_name.jpg'); /* CHANGE THIS to your actual image name */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #4A4A4A;
+}
+
+/* Header */
+header {
+    background-color: #FDE8E9; /* Soft baby pink */
+    padding: 15px;
+    text-align: center;
+    border-bottom: 2px solid #F8C8CC;
+}
+
+/* Logo size */
+header img {
+    width: 80px;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+/* Website name */
+header h1 {
+    color: #D98A92; /* Warm baby rose */
+    margin: 5px 0;
+    font-size: 28px;
+}
+
+/* Navigation menu */
+nav {
+    margin-top: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #7B9EA8; /* Soft baby blue-grey */
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #A8D5D8; /* Soft baby mint */
+}
+
+/* Main content */
+main {
+    padding: 30px;
+    text-align: center;
+}
+
+/* Headings */
+h2 {
+    color: #E8A2A8; /* Warm baby rose */
+    font-size: 25px;
+}
+
+h3 {
+    color: #D98A92; 
+}
+
+/* Paragraphs */
+p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Product section */
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Individual product */
+.product {
+    background-color: #FFFFFF;
+    width: 220px;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Product images */
+.product img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Buttons */
+button {
+    background-color: #A8D5D8; /* Soft baby mint */
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+button:hover {
+    background-color: #88BFC3;
+}
+
+/* Footer */
+footer {
+    background-color: #FDE8E9; /* Soft baby pink */
+    color: #666666;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+/* ============================================
+   RESPONSIVE MEDIA QUERIES
+   ============================================ */
+
+/* --- Large Desktop (1400px and up) --- */
+@media screen and (min-width: 1400px) {
+    body {
+        font-size: 18px;
+    }
+
+    main {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 40px;
+    }
+
+    header h1 {
+        font-size: 34px;
+    }
+
+    header img {
+        width: 100px;
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+
+    .product {
+        width: 260px;
+        padding: 20px;
+    }
+
+    .product img {
+        width: 220px;
+        height: 220px;
+    }
+
+    button {
+        padding: 12px 28px;
+        font-size: 17px;
+    }
+}
+
+/* --- Standard Desktop (1200px to 1399px) --- */
+@media screen and (min-width: 1200px) and (max-width: 1399px) {
+    main {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 35px;
+    }
+
+    header h1 {
+        font-size: 30px;
+    }
+
+    .product {
+        width: 240px;
+    }
+
+    .product img {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+/* --- Laptop (992px to 1199px) --- */
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+    main {
+        padding: 25px;
+    }
+
+    header h1 {
+        font-size: 26px;
+    }
+
+    header img {
+        width: 75px;
+    }
+
+    h2 {
+        font-size: 23px;
+    }
+
+    .product {
+        width: 210px;
+        padding: 12px;
+    }
+
+    .product img {
+        width: 170px;
+        height: 170px;
+    }
+
+    nav a {
+        margin: 0 8px;
+        font-size: 15px;
+    }
+}
+
+/* --- Small Laptop / Large Tablet (768px to 991px) --- */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    main {
+        padding: 20px;
+    }
+
+    header {
+        padding: 12px;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    header img {
+        width: 70px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    h3 {
+        font-size: 19px;
+    }
+
+    p {
+        font-size: 15px;
+    }
+
+    nav a {
+        margin: 0 7px;
+        font-size: 14px;
+    }
+
+    .products {
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .product {
+        width: 200px;
+        padding: 12px;
+    }
+
+    .product img {
+        width: 160px;
+        height: 160px;
+    }
+
+    button {
+        padding: 9px 18px;
+        font-size: 14px;
+    }
+}
+
+/* --- Tablet / Large Phone (600px to 767px) --- */
+@media screen and (min-width: 600px) and (max-width: 767px) {
+    body {
+        background-attachment: scroll; /* Fixed backgrounds can cause issues on mobile */
+    }
+
+    main {
+        padding: 18px;
+    }
+
+    header {
+        padding: 12px;
+    }
+
+    header h1 {
+        font-size: 22px;
+    }
+
+    header img {
+        width: 65px;
+    }
+
+    nav {
+        margin-top: 10px;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 5px 6px;
+        font-size: 14px;
+    }
+
+    h2 {
+        font-size: 21px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 15px;
+    }
+
+    .products {
+        gap: 15px;
+        padding: 12px;
+    }
+
+    .product {
+        width: 45%;           /* Two products per row */
+        min-width: 160px;
+        padding: 12px;
+    }
+
+    .product img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+    }
+
+    button {
+        padding: 9px 18px;
+        font-size: 14px;
+        width: 100%;
+    }
+
+    footer {
+        padding: 15px;
+        font-size: 14px;
+    }
+}
+
+/* --- Small Phone (max-width: 599px) --- */
+@media screen and (max-width: 599px) {
+    body {
+        background-attachment: scroll;
+    }
+
+    main {
+        padding: 15px;
+    }
+
+    header {
+        padding: 10px;
+    }
+
+    header img {
+        width: 55px;
+    }
+
+    header h1 {
+        font-size: 20px;
+    }
+
+    nav {
+        margin-top: 8px;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 4px 5px;
+        font-size: 13px;
+    }
+
+    h2 {
+        font-size: 19px;
+    }
+
+    h3 {
+        font-size: 17px;
+    }
+
+    p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .products {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .product {
+        width: 90%;            /* Full-width products */
+        max-width: 320px;
+        padding: 12px;
+    }
+
+    .product img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 14px;
+        width: 100%;
+    }
+
+    footer {
+        padding: 12px;
+        font-size: 13px;
+    }
+}
+
+/* --- Very Small Phone (max-width: 360px) --- */
+@media screen and (max-width: 360px) {
+    header h1 {
+        font-size: 18px;
+    }
+
+    header img {
+        width: 48px;
+    }
+
+    nav a {
+        font-size: 12px;
+        margin: 3px 4px;
+    }
+
+    h2 {
+        font-size: 17px;
+    }
+
+    p {
+        font-size: 13px;
+    }
+
+    .product {
+        width: 100%;
+        padding: 10px;
+    }
+
+    button {
+        font-size: 13px;
+        padding: 8px 16px;
+    }
+}

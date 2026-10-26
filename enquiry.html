@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO: Title & Meta Description -->
+    <title>Product Enquiry | Nthabi Baby Boutique</title>
+    <meta name="description" content="Enquire about baby clothing availability, pricing, and bulk orders at Nthabi Baby Boutique.">
+    <link rel="stylesheet" href="css_assets/myfirstcss/style.css">
+</head>
+<body>
+
+<header>
+    <h1>Nthabi Baby Boutique</h1>
+    <p>Comfort • Style • Love for Every Little One</p>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="product_categories.html">Products</a>
+        <a href="shopping_cart.html">Shopping Cart</a>
+        <a href="contact.html">Contact</a>
+        <a href="enquiry.html">Enquiry</a>
+        <a href="chatbot.html">Chatbot</a>
+    </nav>
+</header>
+
+<main>
+    <h2>Make a Product Enquiry</h2>
+    <p>Ask about our products, bulk orders, or availability. We will get back to you with pricing.</p>
+
+    <!-- JAVASCRIPT VALIDATION & AJAX FORM -->
+    <form id="enquiryForm" novalidate>
+        <label for="name">Full Name:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">Email Address:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="phone">Phone Number:</label><br>
+        <input type="tel" id="phone" name="phone" required><br><br>
+
+        <label for="product">Product of Interest:</label><br>
+        <select id="product" name="product" required>
+            <option value="">-- Select a Product --</option>
+            <option value="dresses">Baby Dresses</option>
+            <option value="rompers">Baby Rompers</option>
+            <option value="shoes">Baby Shoes</option>
+            <option value="gift-set">Gift Sets</option>
+        </select><br><br>
+
+        <label for="message">Your Message:</label><br>
+        <textarea id="message" name="message" rows="5" cols="40" required></textarea><br><br>
+
+        <button type="submit">Submit Enquiry</button>
+        <p id="formFeedback" style="font-weight: bold;"></p>
+    </form>
+</main>
+
+<footer>
+    <p>&copy; 2026 Nthabi Baby Boutique. All Rights Reserved.</p>
+</footer>
+
+<!-- JAVASCRIPT FOR VALIDATION AND AJAX -->
+<script>
+document.getElementById('enquiryForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // Stop normal submission
+    
+    // Get form values
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const feedback = document.getElementById('formFeedback');
+
+    // 1. JAVASCRIPT VALIDATION (Image 4 & 5 requirement)
+    if (name.length < 2) {
+        feedback.style.color = 'red';
+        feedback.innerText = 'Error: Please enter a valid name.';
+        return;
+    }
+
+    if (!email.includes('@') || !email.includes('.')) {
+        feedback.style.color = 'red';
+        feedback.innerText = 'Error: Please enter a valid email address.';
+        return;
+    }
+
+    if (phone.length !== 10 || isNaN(phone)) {
+        feedback.style.color = 'red';
+        feedback.innerText = 'Error: Phone number must be exactly 10 digits.';
+        return;
+    }
+
+    // 2. AJAX SUBMISSION (Image 5 requirement)
+    feedback.style.color = 'blue';
+    feedback.innerText = 'Sending your enquiry...';
+
+    // Simulating AJAX submission (You would use fetch() to a real server here)
+    setTimeout(() => {
+        feedback.style.color = 'green';
+        feedback.innerText = 'Success! Your enquiry has been sent. We will respond with pricing shortly.';
+        this.reset(); // Clear form
+    }, 1500); 
+});
+</script>
+
+</body>
+</html>

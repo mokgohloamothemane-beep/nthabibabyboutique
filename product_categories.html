@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Baby Clothes | Nthabi Baby Boutique</title>
+    <meta name="description" content="Browse our collection of baby dresses, shoes, and jumpsuits. High-quality, affordable baby fashion delivered across South Africa.">
+    <link rel="stylesheet" href="css_assets/myfirstcss/style.css">
+</head>
+    
+<body>
+
+<header>
+    <h1>Nthabi Baby Boutique</h1>
+    <p>Comfort • Style • Love for Every Little One</p>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="product_categories.html">Products</a>
+        <a href="shopping_cart.html">Shopping Cart</a>
+        <a href="contact.html">Contact</a>
+        <a href="enquiry.html">Enquiry</a>
+        <a href="chatbot.html">Chatbot</a>
+    </nav>
+</header>
+
+<main>
+    <h2>Our Product Categories</h2>
+    <p>Browse our beautiful collection of baby clothing and accessories.</p>
+
+    <!-- SEARCH BAR -->
+    <div style="margin-bottom: 20px;">
+        <input type="text" id="searchBar" placeholder="Search for baby clothes..." style="padding: 10px; width: 60%; max-width: 400px; border-radius: 20px; border: 1px solid #F8C8CC;">
+    </div>
+
+    <!-- PRODUCTS LIST -->
+    <div id="product-list" class="products">
+        
+        <div class="product-card product">
+            <!-- Notice the space in the image name -->
+            <img src="images/baby accessories.jpg" alt="Baby accessories" class="gallery-img" onerror="this.src='https://placehold.co/180x180/FF0000/FFFFFF?text=Image+Missing';">
+            <h3>Baby Accessories</h3>
+            <p>R250.00</p>
+            <button onclick="addToCart(1, 'Baby Accessories', 250.00, 'images/baby accessories.jpg')">Add to Cart</button>
+        </div>
+
+        <div class="product-card product">
+            <img src="images/baby dresses.jpg" alt="Baby dresses" class="gallery-img" onerror="this.src='https://placehold.co/180x180/FF0000/FFFFFF?text=Image+Missing';">
+            <h3>Baby Dresses</h3>
+            <p>R120.00</p>
+            <button onclick="addToCart(2, 'Baby Dresses', 120.00, 'images/baby dresses.jpg')">Add to Cart</button>
+        </div>
+
+        <div class="product-card product">
+            <img src="images/baby rompers.jpg" alt="Baby rompers" class="gallery-img" onerror="this.src='https://placehold.co/180x180/FF0000/FFFFFF?text=Image+Missing';">
+            <h3>Baby Rompers</h3>
+            <p>R180.00</p>
+            <button onclick="addToCart(3, 'Baby Rompers', 180.00, 'images/baby rompers.jpg')">Add to Cart</button>
+        </div>
+
+        <div class="product-card product">
+            <img src="images/baby shoes.jpg" alt="Baby shoes" class="gallery-img" onerror="this.src='https://placehold.co/180x180/FF0000/FFFFFF?text=Image+Missing';">
+            <h3>Baby Shoes</h3>
+            <p>R230.00</p>
+            <button onclick="addToCart(4, 'Baby Shoes', 230.00, 'images/baby shoes.jpg')">Add to Cart</button>
+        </div>
+
+        <div class="product-card product">
+            <img src="images/baby socks.jpg" alt="Baby socks" class="gallery-img" onerror="this.src='https://placehold.co/180x180/FF0000/FFFFFF?text=Image+Missing';">
+            <h3>Baby Socks</h3>
+            <p>R80.00</p>
+            <button onclick="addToCart(5, 'Baby Socks', 80.00, 'images/baby socks.jpg')">Add to Cart</button>
+        </div>
+
+        <div class="product-card product">
+            <img src="images/boy jumpsuits.jpg" alt="Boy jumpsuits" class="gallery-img" onerror="this.src='https://placehold.co/180x180/FF0000/FFFFFF?text=Image+Missing';">
+            <h3>Boy Jumpsuits</h3>
+            <p>R200.00</p>
+            <button onclick="addToCart(6, 'Boy Jumpsuits', 200.00, 'images/boy jumpsuits.jpg')">Add to Cart</button>
+        </div>
+
+        <div class="product-card product">
+            <img src="images/boy tshirts.jpg" alt="Boy tshirts" class="gallery-img" onerror="this.src='https://placehold.co/180x180/FF0000/FFFFFF?text=Image+Missing';">
+            <h3>Boy T-Shirts</h3>
+            <p>R150.00</p>
+            <button onclick="addToCart(7, 'Boy T-Shirts', 150.00, 'images/boy tshirts.jpg')">Add to Cart</button>
+        </div>
+
+        <div class="product-card product">
+            <img src="images/gift sets.jpg" alt="Gift Set" class="gallery-img" onerror="this.src='https://placehold.co/180x180/FF0000/FFFFFF?text=Image+Missing';">
+            <h3>Baby Shower Gift Set</h3>
+            <p>R350.00</p>
+            <button onclick="addToCart(8, 'Gift Set', 350.00, 'images/gift sets.jpg')">Add to Cart</button>
+        </div>
+
+    </div>
+
+    <h2>Why Shop With Us?</h2>
+    <ul style="list-style-position: inside; text-align: left; display: inline-block;">
+        <li>✔ High-quality baby clothing</li>
+        <li>✔ Affordable prices</li>
+        <li>✔ Soft and baby-friendly fabrics</li>
+        <li>✔ Stylish designs</li>
+        <li>✔ Friendly customer service</li>
+    </ul>
+</main>
+
+<footer>
+    <p><strong>Nthabi Baby Boutique</strong></p>
+    <p>123 Market Street, Polokwane, Limpopo</p>
+    <p>Phone: +27 15 123 4567</p>
+    <p>Email: info@nthabibabyboutique.co.za</p>
+    <p>&copy; 2026 Nthabi Baby Boutique. All Rights Reserved.</p>
+</footer>
+
+<!-- ALL JAVASCRIPT IS NOW HARDCODED HERE SO IT CANNOT FAIL TO LOAD -->
+<script>
+// --- 1. ADD TO CART LOGIC ---
+function addToCart(id, name, price, image) {
+    let cart = JSON.parse(localStorage.getItem('nthabiCart')) || [];
+    const existingItem = cart.find(item => item.id === id);
+    
+    if (existingItem) {
+        existingItem.quantity += 1; 
+    } else {
+        cart.push({ id, name, price, image, quantity: 1 }); 
+    }
+    
+    localStorage.setItem('nthabiCart', JSON.stringify(cart));
+    alert(name + " added to cart successfully!");
+}
+
+// --- 2. SEARCH LOGIC ---
+document.getElementById('searchBar').addEventListener('keyup', function() {
+    let searchValue = this.value.toLowerCase();
+    let products = document.querySelectorAll('.product-card');
+
+    products.forEach(function(product) {
+        let productName = product.querySelector('h3').textContent.toLowerCase();
+        if (productName.includes(searchValue)) {
+            product.style.display = 'block';
+        } else {
+            product.style.display = 'none';
+        }
+    });
+});
+
+// --- 3. LIGHTBOX LOGIC (MAKE IMAGES BIG) ---
+// Create the dark background and the big image element
+const lightbox = document.createElement('div');
+lightbox.id = 'lightbox';
+lightbox.style.cssText = 'display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); z-index:1000; justify-content:center; align-items:center; cursor:pointer;';
+
+const lightboxImg = document.createElement('img');
+lightboxImg.style.cssText = 'max-width:90%; max-height:90%; border-radius:10px; box-shadow: 0 0 20px rgba(255,255,255,0.5);';
+lightbox.appendChild(lightboxImg);
+document.body.appendChild(lightbox);
+
+// When you click the dark background, close the image
+lightbox.addEventListener('click', () => { 
+    lightbox.style.display = 'none'; 
+});
+
+// Find all images with the class "gallery-img" and make them clickable
+document.querySelectorAll('.gallery-img').forEach(image => {
+    image.style.cursor = 'pointer'; // Shows the hand cursor so users know they can click
+    image.addEventListener('click', function(event) {
+        lightbox.style.display = 'flex'; // Show the lightbox
+        lightboxImg.src = this.src; // Set the big image to the one you clicked
+    });
+});
+</script>
