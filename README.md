@@ -345,6 +345,24 @@ NOTES
 END OF CHANGELOG
 Steps listed in the order they were completed.
 =====================================================
+### changelog part 3
+
+## 1. Created the Product Array
+Created a `products` array to store the details of the products available in the boutique. Each product contains a unique ID, product name, price, and image path. This allows the website to manage and display multiple baby products using a single data structure.
+
+## 2. Implemented the Product Display Function
+Added the `displayProducts()` function to display products dynamically on the webpage. The function uses JavaScript's `map()` method to generate product cards containing product images, names, prices, and Add to Cart buttons. The generated content is inserted into the HTML product section.
+
+## 3. Added the Add to Cart Function
+Created the `addToCart(productId)` function to allow customers to add products to their shopping cart. The function uses `find()` to check whether the selected product already exists in the cart. If the product exists, its quantity increases; otherwise, a new item is added to the cart.
+
+## 4. Developed the Shopping Cart Display
+Implemented the `displayCart()` function to show the selected products in the shopping cart. It displays each product's name, quantity, and subtotal. The function also updates the cart indicator to show the total number of items selected by the customer.
+
+## 5. Implemented Automatic Price Calculation
+Added calculations using JavaScript's `reduce()` method to determine the total number of products and the total purchase price. The subtotal for each product is calculated by multiplying its price by its quantity. The overall total is updated whenever products are added to or removed from the cart.
+
+## 
 
 ### reference list
 
